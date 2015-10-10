@@ -1,7 +1,0 @@
-E:\Web_Senior_Project\Web_Senior_Project\bin\Web_Senior_Project.dll
-E:\Web_Senior_Project\Web_Senior_Project\bin\Web_Senior_Project.pdb
-E:\Web_Senior_Project\Web_Senior_Project\obj\Release\Web_Senior_Project.csprojResolveAssemblyReference.cache
-E:\Web_Senior_Project\Web_Senior_Project\obj\Release\Web_Senior_Project.dll
-E:\Web_Senior_Project\Web_Senior_Project\obj\Release\Web_Senior_Project.pdb
-E:\Web_Senior_Project\Web_Senior_Project\obj\Release\Web_Senior_Project.Properties.Resources.resources
-E:\Web_Senior_Project\Web_Senior_Project\obj\Release\Web_Senior_Project.csproj.GenerateResource.Cache
