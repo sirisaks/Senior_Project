@@ -43,7 +43,7 @@ namespace Web_Senior_Project.Page
                 {
                 
                    Session["userName"] = TextBox1.Text;
-                    Response.Redirect("CPE01-SD.aspx");
+                    Response.Redirect("CPE01-TC.aspx");
                 }
                 else
                 {

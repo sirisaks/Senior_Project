@@ -56,3 +56,11 @@ C:\Users\kuroba\Downloads\Compressed\SW EN\SW EN\comsysTEM\Web_Senior_Project\We
 C:\Users\kuroba\Downloads\Compressed\SW EN\SW EN\comsysTEM\Web_Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.csproj.GenerateResource.Cache
 C:\Users\kuroba\Downloads\Compressed\SW EN\SW EN\comsysTEM\Web_Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.dll
 C:\Users\kuroba\Downloads\Compressed\SW EN\SW EN\comsysTEM\Web_Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.pdb
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\bin\Web_Senior_Project.dll.config
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\bin\Web_Senior_Project.dll
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\bin\Web_Senior_Project.pdb
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.csprojResolveAssemblyReference.cache
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.Properties.Resources.resources
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.csproj.GenerateResource.Cache
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.dll
+C:\Users\kuroba\Documents\GitHub\Senior_Project\Senior_Project\Web_Senior_Project\obj\Debug\Web_Senior_Project.pdb

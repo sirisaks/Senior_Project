@@ -1,132 +1,239 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CPE01-TC.aspx.cs" Inherits="Web_Senior_Project.Page.CPE01_TC" %>
 
+
 <!DOCTYPE html>
+<html lang="en" class="app">
+<head>  
+  <meta charset="utf-8" />
+  <title>Senior Project</title>
+  <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+  <link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="../css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../css/icon.css" type="text/css" />
+  <link rel="stylesheet" href="../css/font.css" type="text/css" />
+  <link rel="stylesheet" href="../css/app.css" type="text/css" />  
+</head>
+<body class="" >
+  <section class="vbox">
+    <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
+      <div class="navbar-header aside-md dk">
+        <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+          <i class="fa fa-bars"></i>
+        </a>
+        <a href="Mainpage.aspx" class="navbar-brand">
+          <span class="hidden-nav-xs">Senior Project</span>
+        </a>
+      </div>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
+        <li class="hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <i class="i i-chat3"></i>
+            <span class="badge badge-sm up bg-danger count">2</span>
+          </a>
+          <section class="dropdown-menu aside-xl animated flipInY">
+            <section class="panel bg-white">
+              <div class="panel-heading b-light bg-light">
+                <strong>You have <span class="count">2</span> notifications</strong>
+              </div>
+              <div class="list-group list-group-alt">
+                <a href="#" class="media list-group-item">
+                  <span class="pull-left thumb-sm">
+                    <img src="images/a0.png" alt="..." class="img-circle">
+                  </span>
+                  <span class="media-body block m-b-none">
+                    Use awesome animate.css<br>
+                    <small class="text-muted">10 minutes ago</small>
+                  </span>
+                </a>
+                <a href="#" class="media list-group-item">
+                  <span class="media-body block m-b-none">
+                    1.0 initial released<br>
+                    <small class="text-muted">1 hour ago</small>
+                  </span>
+                </a>
+              </div>
+              <div class="panel-footer text-sm">
+                <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
+                <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+              </div>
+            </section>
+          </section>
+        </li>
 
-<html xmlns="http://www.w3.org/1999/xhtml" style="background-color: #FFFFFF">
-<head id="Head1" runat="server">
-    <title>www.cpesenior55</title>
-    <style type="text/css">
-        .auto-style1 {
-            height: 150px;
-            width: 300px;
-        }
-        .auto-style2 {
-            width: 575px;
-            height: 20px;
-        }
-        .auto-style8 {
-            width: 249px;
-            height: 240px;
-        }
-        .auto-style19 {
-            height: 20px;
-            width: 742px;
-        }
-        .auto-style21 {
-            height: 40px;
-            width: 742px;
-        }
-        .auto-style36 {
-            height: 940px;
-            width: 575px;
-        }
-        .auto-style37 {
-            height: 40px;
-            width: 575px;
-        }
-        </style>
-    </head>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+            <span class="thumb-sm avatar pull-left">
+              <img src="../image/a0.png" alt="...">
+            </span>
+            John.Smith <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu animated fadeInRight">            
+            <li>
+              <span class="arrow top"></span>
+              <a href="#">Settings</a>
+            </li>
+            <li>
+              <a href="profile.html">Profile</a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="badge bg-danger pull-right">3</span>
+                Notifications
+              </a>
+            </li>
+            <li>
+              <a href="Help.aspx">Help</a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+            </li>
+          </ul>
+        </li>
+      </ul>      
+    </header>
 
-<body bgcolor="#CC6633">
 
-    <form id="form1" runat="server" style="background-color: #FFFFFF" >
-    <div>
-        <table style="height: 150px; width: 1050px; background-color: #FFFFFF; border:solid 2px #09F;" align="center">
-            <tr>
-                <td>
-                    <table style="height: 150px; width: 1050px">
-                        <tr>
-                            <td class="auto-style1" >
-                                &nbsp;&nbsp;&nbsp;
-                                <a href="http://www.nu.ac.th/" target="_blank">
-                                    <img src="../pic/nu.png" style="height: 120px; width: 120px" align="center" /></a>&nbsp;&nbsp; 
-                                <a href="http://web.eng.nu.ac.th/" target="_blank">
-                                    <img src="../pic/en.gif" style="height: 120px; width: 120px" align="center" /></a>
-                            </td>
-                            <td style="height: 150px; width: 750px;">
-                                <asp:Label ID="senior" runat="server" Text="SENIOR PROJECT FORM." style="font-size:65px" Font-Underline="False" ></asp:Label>
-                                <br />
-                                <asp:Label ID="faculty" runat="server" Text="Faculty of Engineering Computer Engineering." style="font-size:20px"></asp:Label>
-                                <br />
-                                <asp:Label ID="naresuan" runat="server" Text="Naresuan University." style="font-size:20px"></asp:Label>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-        </table>
-   
-        <br />
-   
-<!--------------------------------------table -------------------------------------------------->
+    <section>
+      <section class="hbox stretch">
+        <!-- .aside -->
+        <aside class="bg-black aside-md hidden-print hidden-xs" id="nav">          
+          <section class="vbox">
+            <section class="w-f scrollable">
 
-        <table style="height: 550px; width: 1000px; background-color: #FFFFFF; border:solid 2px #09F;" bgcolor="#ffff1f" align="center">
-            <tr>
-               <td style="background-color: #FFCC66; font-size:25px; text-align:center; color: #FFFFFF;" class="auto-style2">MENU</td>
-               <td style="background-color: #FFFFCC; " class="auto-style19">
-                  <table style="height: 20px; width: 750px; background-color: #FFCC66;">
-                    <tr>
-                        <td style="height: 20px; width: 100px;">
-                           <input type="button" value="Home" style="height: 30px; width: 100px;" onclick="window.location.href='Home-TC.aspx';" />    
-                        </td>
-                        <td style="height: 20px; width: 100px;">
-                           <input type="button" value="About" style="height: 30px; width: 100px;" onclick="window.location.href='About.aspx';" />     
-                        </td>
-                        <td>
-                            <table style="height: 20px; width: 550px">
-                                <tr>
-                                    <td style="height: 20px; width: 100px;"></td>
-                                    <td style="height: 20px; width: 100px;"></td>
-                                    <td style="height: 20px; width: 100px;"></td>
-                                    <td style="height: 20px; width: 200px; text-align:right;">
-                                        <asp:Label ID="LbUser" runat="server" Font-Size="Large" Text="Username"></asp:Label>
-                                    </td>
-                                    <td style="height: 20px; width: 50px;">
-                                        <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" />
-                                    </td>
-                                </tr>
-                             </table>
-                           </td>
-                        </tr>
-                     </table>
-                   </td>
-                </tr>
-                <tr>
-                    <td style="background-color: #FFFFCC;" align="top" valign="top" class="auto-style36" >
-                        <table style="height: 150px; width: 250px;">
-                            <tr>
-                                <td style="border:solid 2px #09F; background-color: #FFFFCC;" align="top" valign="top">
-                                    <li style="width: 250px; background-color: #99CCFF;"><a href="CPE01-TC.aspx" />เสนอหัวข้อโครงงาน</a></li>
-                                    <li style="width: 250px; background-color: #FFCCFF;"><a href="CPE02-TC.aspx" />บันทึกการดำเนินงานโครงงาน</a></li>
-                                    <li style="width: 250px; background-color: #99CCFF;"><a href="CPE03-TC.aspx" />ขอสอบข้อเสนอโครงงาน</a></li>
-                                    <li style="width: 250px; background-color: #FFCCFF;"><a href="CPE04-TC.aspx" />ประเมินข้อเสนอโครงงาน</a></li>
-                                    <li style="width: 250px; background-color: #99CCFF;"><a href="CPE05-TC.aspx" />ประเมินความก้าวหน้าโครงงาน</a></li> 
-                                    <li style="width: 250px; background-color: #FFCCFF;"><a href="CPE06-TC.aspx" />ขอสอบโครงงาน</a></li>
-                                    <li style="width: 250px; background-color: #99CCFF;"><a href="CPE07-TC.aspx" />ประเมินโครงงาน</a></li>
-                                    <li style="width: 250px; background-color: #FFCCFF;"><a href="Money.aspx" />ใบสำคัญรับเงินโครงงาน</a></li>
-                                </td>
-                            </tr>
-                            </table>
-                        </td>
-                    <td align ="left" valign ="top" >fchn</td>
-                </tr>
-                <tr>
-                    <td style="background-color: #FFCC66;" align="center" class="auto-style37"></td>
-                    <td style="background-color: #FFCC66;" align="center" class="auto-style21"></td>
-                </tr>
-            </table>
-            <!-------------------------------------end table -------------------------------------------------->
-        </div>
-    </form>
+              <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railOpacity="0.2">
+
+                <!-- nav -->                 
+                <nav class="nav-primary hidden-xs">
+                  <ul class="nav nav-main" data-ride="collapse">
+                   
+                    <li >
+                      <a href="#" class="auto">
+                        <span class="pull-right text-muted">
+                          <i class="i i-circle-sm-o text"></i>
+                          <i class="i i-circle-sm text-active"></i>
+                        </span>
+                        <b class="badge bg-danger pull-right">7</b>
+                        <i class="i i-stack icon">
+                        </i>
+                        <span class="font-bold">CPE Form</span>
+                      </a>
+                      <ul class="nav dk">
+                        <li >
+                          <a href="CPE01.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE01</span>
+                          </a>
+                        </li>
+                         <li >
+                          <a href="CPE02.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE02</span>
+                          </a>
+                        </li>
+                         <li >
+                          <a href="CPE03.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE03</span>
+                          </a>
+                        </li>
+                            <li >
+                          <a href="CPE04.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE04</span>
+                          </a>
+                        </li>
+                            <li >
+                          <a href="CPE05.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE05</span>
+                          </a>
+                        </li>
+                            <li >
+                          <a href="CPE06.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE06</span>
+                          </a>
+                        </li>
+                            <li >
+                          <a href="CPE07.aspx" class="auto">                                                        
+                            <i class="i i-dot"></i>
+
+                            <span>CPE07</span>
+                          </a>
+                        </li>
+                      </ul>
+                       
+                    </li>
+
+                       <li >
+                      <a href="About.aspx" class="auto">
+                        <i class="i i-statistics icon">
+                        </i>
+                        <span class="font-bold">About</span>
+                      </a>
+                    </li>
+                       </ul>
+                </nav>
+                <!-- / nav -->
+              </div>
+            </section>
+            
+            <footer class="footer hidden-xs no-padder text-center-nav-xs">
+              <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
+                <i class="i i-logout"></i>
+              </a>
+              <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
+                <i class="i i-circleleft text"></i>
+                <i class="i i-circleright text-active"></i>
+              </a>
+            </footer>
+          </section>
+        </aside>
+        <!-- /.aside -->
+
+
+        <%--  Body  Content  --%>
+        <section id="content">
+          <section class="vbox">
+            <header class="header bg-light dk">
+              <p>Content</p>
+            </header>
+  <section class="scrollable wrapper">
+              <div class="row">
+                <div class="col-lg-12">
+                  <!-- .breadcrumb -->
+
+                  <ul class="breadcrumb">
+                <a style="text-align:center"><h3>CPE01  แบบเสนอหัวข้อโครงงานวิศวกรรมคอมพิวเตอร์ </h3></a>
+                  </ul>
+                  <!-- / .breadcrumb -->
+                </div>
+              </div>
+            </section>
+          </section>
+
+
+          <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
+        </section>
+      </section>
+    </section>
+  </section>
+  <script src="../js/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="../js/bootstrap.js"></script>
+  <!-- App -->
+  <script src="../js/app.js"></script>  
+  <script src="../js/slimscroll/jquery.slimscroll.min.js"></script>
+  
+  <script src="../js/app.plugin.js"></script>
 </body>
 </html>

@@ -9,9 +9,11 @@ namespace Web_Senior_Project.Page
 {
     public partial class Home_SD : System.Web.UI.Page
     {
+        String Name; 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Name = Session["userName"].ToString();
+            
         }
     }
 }
