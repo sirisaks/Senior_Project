@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Web_Senior_Project.Page
 {
-    public partial class Index : System.Web.UI.Page
+    public partial class index : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -24,7 +24,7 @@ namespace Web_Senior_Project.Page
             SqlConnection con = new SqlConnection(constr);
             con.Open();
 
-            String txtuser = IDName.Value ;
+            String txtuser = IDName.Value;
             String txtpass = Password.Value;
 
             string query = "SELECT l.role, l.username FROM Login l WHERE l.username = @user AND l.password =@Password";
@@ -34,7 +34,7 @@ namespace Web_Senior_Project.Page
 
             SqlDataReader dr = cmd.ExecuteReader();
 
-            String role = "Null"  , Name = null;
+            String role = "Null", Name = null;
             if (dr.Read())
             {
                 if (dr.HasRows)
@@ -44,7 +44,7 @@ namespace Web_Senior_Project.Page
                 }
             }
             con.Close();
-            if (role.Equals("Null")) 
+            if (role.Equals("Null"))
             {
                 MessageBox.Show("Invalid Login",
                                    "Important Note",
@@ -62,9 +62,9 @@ namespace Web_Senior_Project.Page
                 else if (role.Equals("1")) // professor
                 {
                     Session["userName"] = Name; //  PID
-                    Response.Redirect("Home-TC.aspx"); 
+                    Response.Redirect("Home-TC.aspx");
                 }
-              
+
             }
         }
     }

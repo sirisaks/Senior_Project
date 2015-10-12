@@ -1,10 +1,12 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CPE01-TC.aspx.cs" Inherits="Web_Senior_Project.Page.CPE01_TC" %>
-
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="index.master.cs" Inherits="Web_Senior_Project.Page.index" %>
 
 <!DOCTYPE html>
-<html lang="en" class="app">
-<head>  
-  <meta charset="utf-8" />
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="app">
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+      <meta charset="utf-8" />
   <title>Senior Project</title>
   <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
@@ -14,9 +16,12 @@
   <link rel="stylesheet" href="../css/icon.css" type="text/css" />
   <link rel="stylesheet" href="../css/font.css" type="text/css" />
   <link rel="stylesheet" href="../css/app.css" type="text/css" />  
+
 </head>
 <body class="" >
-  <section class="vbox">
+    <form runat="server">
+
+    <section class="vbox">
     <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
       <div class="navbar-header aside-md dk">
         <a class="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
@@ -26,72 +31,19 @@
           <span class="hidden-nav-xs">Senior Project</span>
         </a>
       </div>
-      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
-        <li class="hidden-xs">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <i class="i i-chat3"></i>
-            <span class="badge badge-sm up bg-danger count">2</span>
-          </a>
-          <section class="dropdown-menu aside-xl animated flipInY">
-            <section class="panel bg-white">
-              <div class="panel-heading b-light bg-light">
-                <strong>You have <span class="count">2</span> notifications</strong>
-              </div>
-              <div class="list-group list-group-alt">
-                <a href="#" class="media list-group-item">
-                  <span class="pull-left thumb-sm">
-                    <img src="images/a0.png" alt="..." class="img-circle">
-                  </span>
-                  <span class="media-body block m-b-none">
-                    Use awesome animate.css<br>
-                    <small class="text-muted">10 minutes ago</small>
-                  </span>
-                </a>
-                <a href="#" class="media list-group-item">
-                  <span class="media-body block m-b-none">
-                    1.0 initial released<br>
-                    <small class="text-muted">1 hour ago</small>
-                  </span>
-                </a>
-              </div>
-              <div class="panel-footer text-sm">
-                <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
-                <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-              </div>
-            </section>
-          </section>
-        </li>
+      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user"> 
+            <li>
+              <input type="text" id="IDName" placeholder="ID" class="form-control " runat="server" style="margin:2px;">
+            </li>
+            <li> <%-- no-border--%>
+             <input type="password" id="Password" placeholder="Password" class="form-control " runat="server"  style="margin:2px;">
+            </li>
+            <li>
+               
+             <asp:Button ID="btnSubmit"  runat="server" Text="Sign in"  OnClick="Login_Click" class="btn btn-lg btn-primary btn-block"  style="margin:2px;"/>
+           
+            </li>
 
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <span class="thumb-sm avatar pull-left">
-              <img src="../image/a0.png" alt="...">
-            </span>
-            John.Smith <b class="caret"></b>
-          </a>
-          <ul class="dropdown-menu animated fadeInRight">            
-            <li>
-              <span class="arrow top"></span>
-              <a href="#">Settings</a>
-            </li>
-            <li>
-              <a href="profile.html">Profile</a>
-            </li>
-            <li>
-              <a href="#">
-                <span class="badge bg-danger pull-right">3</span>
-                Notifications
-              </a>
-            </li>
-            <li>
-              <a href="Help.aspx">Help</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
-            </li>
-          </ul>
-        </li>
       </ul>      
     </header>
 
@@ -210,12 +162,13 @@
   <section class="scrollable wrapper">
               <div class="row">
                 <div class="col-lg-12">
-                  <!-- .breadcrumb -->
 
-                  <ul class="breadcrumb">
-                <a style="text-align:center"><h3>CPE01  แบบเสนอหัวข้อโครงงานวิศวกรรมคอมพิวเตอร์ </h3></a>
-                  </ul>
-                  <!-- / .breadcrumb -->
+                     
+    <div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
                 </div>
               </div>
             </section>
@@ -235,5 +188,8 @@
   <script src="../js/slimscroll/jquery.slimscroll.min.js"></script>
   
   <script src="../js/app.plugin.js"></script>
+         </form>
 </body>
 </html>
+
+

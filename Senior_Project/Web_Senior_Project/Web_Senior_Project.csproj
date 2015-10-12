@@ -149,29 +149,10 @@
     <Content Include="js\wysiwyg\demo.js" />
     <Content Include="js\wysiwyg\jquery.hotkeys.js" />
     <Content Include="Page\About.aspx" />
-    <Content Include="Page\Adminpage.aspx" />
-    <Content Include="Page\CPE01-SD.aspx" />
-    <Content Include="Page\CPE01-TC.aspx" />
-    <Content Include="Page\CPE02-SD.aspx" />
-    <Content Include="Page\CPE02-TC.aspx" />
-    <Content Include="Page\CPE03-SD.aspx" />
-    <Content Include="Page\CPE03-TC.aspx" />
-    <Content Include="Page\CPE04-SD.aspx" />
-    <Content Include="Page\CPE04-TC.aspx" />
-    <Content Include="Page\CPE05-SD.aspx" />
-    <Content Include="Page\CPE05-TC.aspx" />
-    <Content Include="Page\CPE06-SD.aspx" />
-    <Content Include="Page\CPE06-TC.aspx" />
-    <Content Include="Page\CPE07-SD.aspx" />
-    <Content Include="Page\CPE07-TC.aspx" />
-    <Content Include="Page\Edit-SD.aspx" />
-    <Content Include="Page\Edit-TC.aspx" />
     <Content Include="Page\Home-SD.aspx" />
     <Content Include="Page\Home-TC.aspx" />
     <Content Include="Page\Index.aspx" />
-    <Content Include="Page\Login.aspx" />
-    <Content Include="Page\Money.aspx" />
-    <Content Include="Page\Signup.aspx" />
+    <Content Include="Page\indexs.aspx" />
     <Content Include="Page\WebForm1.aspx" />
     <Content Include="pic\champ.jpg" />
     <Content Include="pic\en.gif" />
@@ -192,125 +173,6 @@
     </Compile>
     <Compile Include="Page\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\Adminpage.aspx.cs">
-      <DependentUpon>Adminpage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\Adminpage.aspx.designer.cs">
-      <DependentUpon>Adminpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE01-SD.aspx.cs">
-      <DependentUpon>CPE01-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE01-SD.aspx.designer.cs">
-      <DependentUpon>CPE01-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE01-TC.aspx.cs">
-      <DependentUpon>CPE01-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE01-TC.aspx.designer.cs">
-      <DependentUpon>CPE01-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE02-SD.aspx.cs">
-      <DependentUpon>CPE02-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE02-SD.aspx.designer.cs">
-      <DependentUpon>CPE02-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE02-TC.aspx.cs">
-      <DependentUpon>CPE02-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE02-TC.aspx.designer.cs">
-      <DependentUpon>CPE02-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE03-SD.aspx.cs">
-      <DependentUpon>CPE03-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE03-SD.aspx.designer.cs">
-      <DependentUpon>CPE03-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE03-TC.aspx.cs">
-      <DependentUpon>CPE03-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE03-TC.aspx.designer.cs">
-      <DependentUpon>CPE03-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE04-SD.aspx.cs">
-      <DependentUpon>CPE04-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE04-SD.aspx.designer.cs">
-      <DependentUpon>CPE04-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE04-TC.aspx.cs">
-      <DependentUpon>CPE04-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE04-TC.aspx.designer.cs">
-      <DependentUpon>CPE04-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE05-SD.aspx.cs">
-      <DependentUpon>CPE05-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE05-SD.aspx.designer.cs">
-      <DependentUpon>CPE05-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE05-TC.aspx.cs">
-      <DependentUpon>CPE05-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE05-TC.aspx.designer.cs">
-      <DependentUpon>CPE05-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE06-SD.aspx.cs">
-      <DependentUpon>CPE06-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE06-SD.aspx.designer.cs">
-      <DependentUpon>CPE06-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE06-TC.aspx.cs">
-      <DependentUpon>CPE06-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE06-TC.aspx.designer.cs">
-      <DependentUpon>CPE06-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE07-SD.aspx.cs">
-      <DependentUpon>CPE07-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE07-SD.aspx.designer.cs">
-      <DependentUpon>CPE07-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CPE07-TC.aspx.cs">
-      <DependentUpon>CPE07-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\CPE07-TC.aspx.designer.cs">
-      <DependentUpon>CPE07-TC.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\Edit-SD.aspx.cs">
-      <DependentUpon>Edit-SD.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\Edit-SD.aspx.designer.cs">
-      <DependentUpon>Edit-SD.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\Edit-TC.aspx.cs">
-      <DependentUpon>Edit-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\Edit-TC.aspx.designer.cs">
-      <DependentUpon>Edit-TC.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Home-SD.aspx.cs">
       <DependentUpon>Home-SD.aspx</DependentUpon>
@@ -333,26 +195,19 @@
     <Compile Include="Page\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Page\Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Page\index.Master.cs">
+      <DependentUpon>index.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Page\index.Master.designer.cs">
+      <DependentUpon>index.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page\Money.aspx.cs">
-      <DependentUpon>Money.aspx</DependentUpon>
+    <Compile Include="Page\indexs.aspx.cs">
+      <DependentUpon>indexs.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\Money.aspx.designer.cs">
-      <DependentUpon>Money.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Page\Signup.aspx.cs">
-      <DependentUpon>Signup.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\Signup.aspx.designer.cs">
-      <DependentUpon>Signup.aspx</DependentUpon>
+    <Compile Include="Page\indexs.aspx.designer.cs">
+      <DependentUpon>indexs.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Student.Master.cs">
       <DependentUpon>Student.Master</DependentUpon>
@@ -395,6 +250,7 @@
     <Content Include="js\datatables\datatable.json" />
     <Content Include="js\datatables\growthrate.csv" />
     <Content Include="js\slider\slider.less" />
+    <Content Include="Page\index.Master" />
     <None Include="Properties\PublishProfiles\Wed_Senior_Project.pubxml" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
