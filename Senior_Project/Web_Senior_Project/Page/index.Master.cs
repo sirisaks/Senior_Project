@@ -56,6 +56,7 @@ namespace Web_Senior_Project.Page
             {
                 if (role.Equals("0"))  // student
                 {
+                    Session["role"] = "no";
                     Session["userName"] = Name; //  SID
                     Response.Redirect("Home-SD.aspx");
                 }

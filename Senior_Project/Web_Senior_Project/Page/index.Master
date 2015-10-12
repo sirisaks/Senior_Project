@@ -19,7 +19,7 @@
 
 </head>
 <body class="" >
-    <form runat="server">
+ 
 
     <section class="vbox">
     <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
@@ -30,21 +30,21 @@
         <a href="Mainpage.aspx" class="navbar-brand">
           <span class="hidden-nav-xs">Senior Project</span>
         </a>
-      </div>
-      <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user"> 
-            <li>
+      </div> 
+        <form runat="server">
+            <div style="float:right">
+        <div style="float:left; margin:2px;">
               <input type="text" id="IDName" placeholder="ID" class="form-control " runat="server" style="margin:2px;">
-            </li>
-            <li> <%-- no-border--%>
+          </div>
+                <div style="float:left; margin:2px;">
+            <%-- no-border--%>
              <input type="password" id="Password" placeholder="Password" class="form-control " runat="server"  style="margin:2px;">
-            </li>
-            <li>
-               
+               </div>
+                <div style="float:left; margin:2px;">
              <asp:Button ID="btnSubmit"  runat="server" Text="Sign in"  OnClick="Login_Click" class="btn btn-lg btn-primary btn-block"  style="margin:2px;"/>
-           
-            </li>
-
-      </ul>      
+                 </div>
+                </div>
+            </form>
     </header>
 
 
@@ -60,75 +60,35 @@
                 <!-- nav -->                 
                 <nav class="nav-primary hidden-xs">
                   <ul class="nav nav-main" data-ride="collapse">
-                   
-                    <li >
-                      <a href="#" class="auto">
-                        <span class="pull-right text-muted">
-                          <i class="i i-circle-sm-o text"></i>
-                          <i class="i i-circle-sm text-active"></i>
-                        </span>
-                        <b class="badge bg-danger pull-right">7</b>
-                        <i class="i i-stack icon">
+
+                    <li > 
+                      <a href="web_guide.aspx" class="auto">
+                        <i class="i i-statistics icon">
                         </i>
-                        <span class="font-bold">CPE Form</span>
+                        <span class="font-bold">WEB Guide</span>
                       </a>
-                      <ul class="nav dk">
-                        <li >
-                          <a href="CPE01.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                    </li>
 
-                            <span>CPE01</span>
-                          </a>
-                        </li>
-                         <li >
-                          <a href="CPE02.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE02</span>
-                          </a>
-                        </li>
-                         <li >
-                          <a href="CPE03.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE03</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="CPE04.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE04</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="CPE05.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE05</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="CPE06.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE06</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="CPE07.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE07</span>
-                          </a>
-                        </li>
-                      </ul>
-                       
+                      
+                    <li > 
+                      <a href="Project_index.aspx" class="auto">
+                        <i class="i  i-data icon">
+                        </i>
+                        <span class="font-bold">Project List</span>
+                      </a>
                     </li>
 
                        <li >
-                      <a href="About.aspx" class="auto">
-                        <i class="i i-statistics icon">
+                      <a href="schedule.aspx" class="auto">
+                        <i class="i i-calendar icon">
+                        </i>
+                        <span class="font-bold">Schedule</span>
+                      </a>
+                    </li>
+
+                       <li >
+                      <a href="About_Index.aspx" class="auto">
+                        <i class="i  i-bubble icon">
                         </i>
                         <span class="font-bold">About</span>
                       </a>
@@ -140,9 +100,6 @@
             </section>
             
             <footer class="footer hidden-xs no-padder text-center-nav-xs">
-              <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
-                <i class="i i-logout"></i>
-              </a>
               <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
                 <i class="i i-circleleft text"></i>
                 <i class="i i-circleright text-active"></i>
@@ -156,9 +113,7 @@
         <%--  Body  Content  --%>
         <section id="content">
           <section class="vbox">
-            <header class="header bg-light dk">
-              <p>Content</p>
-            </header>
+
   <section class="scrollable wrapper">
               <div class="row">
                 <div class="col-lg-12">
@@ -180,6 +135,8 @@
       </section>
     </section>
   </section>
+
+
   <script src="../js/jquery.min.js"></script>
   <!-- Bootstrap -->
   <script src="../js/bootstrap.js"></script>
@@ -188,7 +145,7 @@
   <script src="../js/slimscroll/jquery.slimscroll.min.js"></script>
   
   <script src="../js/app.plugin.js"></script>
-         </form>
+         
 </body>
 </html>
 

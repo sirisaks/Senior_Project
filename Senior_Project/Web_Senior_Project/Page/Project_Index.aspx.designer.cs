@@ -11,7 +11,7 @@ namespace Web_Senior_Project.Page
 {
 
 
-    public partial class WebForm1
+    public partial class Project_Index
     {
     }
 }

@@ -19,7 +19,7 @@
 
 </head>
 <body class="" >
-
+   
 
     <section class="vbox">
     <header class="bg-white header header-md navbar navbar-fixed-top-xs box-shadow">
@@ -84,17 +84,7 @@
               <a href="profile.html">Profile</a>
             </li>
             <li>
-              <a href="#">
-                <span class="badge bg-danger pull-right">3</span>
-                Notifications
-              </a>
-            </li>
-            <li>
-              <a href="Help.aspx">Help</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="modal.lockme.html" data-toggle="ajaxModal" >Logout</a>
+              <a href="index.aspx" class="auto" >Logout</a>
             </li>
           </ul>
         </li>
@@ -126,13 +116,16 @@
                         </i>
                         <span class="font-bold">CPE Form</span>
                       </a>
+                       
                       <ul class="nav dk">
+                        <%--   <form runat="server">--%>
                         <li >
-                          <a href="CPE01.aspx" class="auto">                                                        
+                              <a href="cpe1_St.aspx" class="auto">                                                        
                             <i class="i i-dot"></i>
 
                             <span>CPE01</span>
                           </a>
+                           <%--  <asp:Button ID="cpe01" runat="server" Text="CPE01" OnClick="cpe01_Click" />--%>
                         </li>
                          <li >
                           <a href="CPE02.aspx" class="auto">                                                        
@@ -176,12 +169,14 @@
                             <span>CPE07</span>
                           </a>
                         </li>
+                                <%--</form>--%>
                       </ul>
+                           
                        
                     </li>
 
                        <li >
-                      <a href="About.aspx" class="auto">
+                      <a href="About_st.aspx" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">About</span>
@@ -191,12 +186,10 @@
                 </nav>
                 <!-- / nav -->
               </div>
+       
             </section>
             
             <footer class="footer hidden-xs no-padder text-center-nav-xs">
-              <a href="modal.lockme.html" data-toggle="ajaxModal" class="btn btn-icon icon-muted btn-inactive pull-right m-l-xs m-r-xs hidden-nav-xs">
-                <i class="i i-logout"></i>
-              </a>
               <a href="#nav" data-toggle="class:nav-xs" class="btn btn-icon icon-muted btn-inactive m-l-xs m-r-xs">
                 <i class="i i-circleleft text"></i>
                 <i class="i i-circleright text-active"></i>
@@ -210,20 +203,17 @@
         <%--  Body  Content  --%>
         <section id="content">
           <section class="vbox">
-            <header class="header bg-light dk">
-              <p>Content</p>
-            </header>
   <section class="scrollable wrapper">
               <div class="row">
                 <div class="col-lg-12">
 
-                        <form id="form1" runat="server">
+                        
     <div>
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
         
         </asp:ContentPlaceHolder>
     </div>
-    </form>
+ 
                 </div>
               </div>
             </section>
@@ -233,6 +223,7 @@
           <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen,open" data-target="#nav,html"></a>
         </section>
       </section>
+             
     </section>
   </section>
   <script src="../js/jquery.min.js"></script>
@@ -243,6 +234,7 @@
   <script src="../js/slimscroll/jquery.slimscroll.min.js"></script>
   
   <script src="../js/app.plugin.js"></script>
+     
 </body>
 </html>
 

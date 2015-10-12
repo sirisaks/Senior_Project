@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Web_Senior_Project.Page
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class history_st : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

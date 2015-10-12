@@ -10,7 +10,7 @@
 namespace Web_Senior_Project.Page {
     
     
-    public partial class indexs {
+    public partial class Index {
         
         /// <summary>
         /// IDName control.

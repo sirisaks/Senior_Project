@@ -69,6 +69,20 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\icon.svg" />
+    <Content Include="Image\11.jpg" />
+    <Content Include="Image\13.jpg" />
+    <Content Include="Image\14.jpg" />
+    <Content Include="Image\15.jpg" />
+    <Content Include="Image\a0.png" />
+    <Content Include="Image\champ.jpg" />
+    <Content Include="Image\en.gif" />
+    <Content Include="Image\Man.png" />
+    <Content Include="Image\nu.png" />
+    <Content Include="Image\pop.JPG" />
+    <Content Include="Image\12.jpg" />
+    <Content Include="Image\som.jpg" />
+    <Content Include="Image\wan.JPG" />
+    <Content Include="Image\Zone.JPG" />
     <Content Include="js\app.js" />
     <Content Include="js\app.plugin.js" />
     <Content Include="js\appear\jquery.appear.js" />
@@ -149,11 +163,17 @@
     <Content Include="js\wysiwyg\demo.js" />
     <Content Include="js\wysiwyg\jquery.hotkeys.js" />
     <Content Include="Page\About.aspx" />
+    <Content Include="Page\About_Index.aspx" />
+    <Content Include="Page\About_st.aspx" />
+    <Content Include="Page\cpe1_St.aspx" />
+    <Content Include="Page\history_st.aspx" />
     <Content Include="Page\Home-SD.aspx" />
     <Content Include="Page\Home-TC.aspx" />
+    <Content Include="Page\Index%28old%29.aspx" />
     <Content Include="Page\Index.aspx" />
-    <Content Include="Page\indexs.aspx" />
-    <Content Include="Page\WebForm1.aspx" />
+    <Content Include="Page\Project_Index.aspx" />
+    <Content Include="Page\schedule.aspx" />
+    <Content Include="Page\web_guide.aspx" />
     <Content Include="pic\champ.jpg" />
     <Content Include="pic\en.gif" />
     <Content Include="pic\Man.png" />
@@ -174,6 +194,34 @@
     <Compile Include="Page\About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\About_Index.aspx.cs">
+      <DependentUpon>About_Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\About_Index.aspx.designer.cs">
+      <DependentUpon>About_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\About_st.aspx.cs">
+      <DependentUpon>About_st.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\About_st.aspx.designer.cs">
+      <DependentUpon>About_st.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe1_St.aspx.cs">
+      <DependentUpon>cpe1_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe1_St.aspx.designer.cs">
+      <DependentUpon>cpe1_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\history_st.aspx.cs">
+      <DependentUpon>history_st.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\history_st.aspx.designer.cs">
+      <DependentUpon>history_st.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Home-SD.aspx.cs">
       <DependentUpon>Home-SD.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -188,12 +236,12 @@
     <Compile Include="Page\Home-TC.aspx.designer.cs">
       <DependentUpon>Home-TC.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Page\Index.aspx.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Page\Index%28old%29.aspx.cs">
+      <DependentUpon>Index%28old%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\Index.aspx.designer.cs">
-      <DependentUpon>Index.aspx</DependentUpon>
+    <Compile Include="Page\Index%28old%29.aspx.designer.cs">
+      <DependentUpon>Index%28old%29.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\index.Master.cs">
       <DependentUpon>index.Master</DependentUpon>
@@ -202,12 +250,19 @@
     <Compile Include="Page\index.Master.designer.cs">
       <DependentUpon>index.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page\indexs.aspx.cs">
-      <DependentUpon>indexs.aspx</DependentUpon>
+    <Compile Include="Page\Project_Index.aspx.cs">
+      <DependentUpon>Project_Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\indexs.aspx.designer.cs">
-      <DependentUpon>indexs.aspx</DependentUpon>
+    <Compile Include="Page\Project_Index.aspx.designer.cs">
+      <DependentUpon>Project_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\schedule.aspx.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\schedule.aspx.designer.cs">
+      <DependentUpon>schedule.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Student.Master.cs">
       <DependentUpon>Student.Master</DependentUpon>
@@ -216,12 +271,19 @@
     <Compile Include="Page\Student.Master.designer.cs">
       <DependentUpon>Student.Master</DependentUpon>
     </Compile>
-    <Compile Include="Page\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Page\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Page\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="Page\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\web_guide.aspx.cs">
+      <DependentUpon>web_guide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\web_guide.aspx.designer.cs">
+      <DependentUpon>web_guide.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -272,9 +334,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Image\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
