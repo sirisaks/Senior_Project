@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="Web_Senior_Project.Page.Student" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Processors.master.cs" Inherits="Web_Senior_Project.Page.Processors" %>
 
 <!DOCTYPE html>
 
@@ -77,7 +77,7 @@
           </a>
           <ul class="dropdown-menu animated fadeInRight">            
             <li>
-              <a href="profile_St.aspx">Profile</a>
+              <a href="profile_pr.aspx">Profile</a>
             </li>
             <li>
               <a href="index.aspx" class="auto" >Logout</a>
@@ -102,77 +102,15 @@
                   <ul class="nav nav-main" data-ride="collapse">
                    
                     <li >
-                      <a href="#" class="auto">
-                        <span class="pull-right text-muted">
-                          <i class="i i-circle-sm-o text"></i>
-                          <i class="i i-circle-sm text-active"></i>
-                        </span>
-                        <b class="badge bg-danger pull-right">7</b>
+                      <a href="Request_Pr.aspx" class="auto">
                         <i class="i i-stack icon">
                         </i>
-                        <span class="font-bold">CPE Form</span>
-                      </a>
-                       
-                      <ul class="nav dk">
-                        <%--   <form runat="server">--%>
-                        <li >
-                              <a href="cpe1_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE01</span>
-                          </a>
-                           <%--  <asp:Button ID="cpe01" runat="server" Text="CPE01" OnClick="cpe01_Click" />--%>
-                        </li>
-                         <li >
-                          <a href="cpe2_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE02</span>
-                          </a>
-                        </li>
-                         <li >
-                          <a href="cpe3_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE03</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="cpe4_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE04</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="cpe5_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE05</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="cpe6_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE06</span>
-                          </a>
-                        </li>
-                            <li >
-                          <a href="cpe7_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
-
-                            <span>CPE07</span>
-                          </a>
-                        </li>
-                                <%--</form>--%>
-                      </ul>
-                           
-                       
+                        <span class="font-bold">Request</span>
+                      </a>               
                     </li>
 
                        <li >
-                      <a href="About_st.aspx" class="auto">
+                      <a href="About_Pr.aspx" class="auto">
                         <i class="i i-statistics icon">
                         </i>
                         <span class="font-bold">About</span>

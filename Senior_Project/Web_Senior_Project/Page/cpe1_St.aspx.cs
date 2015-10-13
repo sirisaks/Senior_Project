@@ -66,28 +66,28 @@ namespace Web_Senior_Project.Page
         protected void ShowEdit()
         {
 
-        //    string constr = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-        //    SqlConnection con = new SqlConnection(constr);
-        //    con.Open();
+            string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(constr);
+            con.Open();
 
-        //    SqlCommand cmd6 = new SqlCommand("select p.PThaiName " +
-        //    " from Project p join Request re on p.IDProject = re.IDProject join SProject  sp on sp.IDProject = p.IDProject  " +
-        //        " where sp.SID ='" + id + "' and re.NOForm = '1'", con);
-        //    SqlDataReader reader6 = cmd6.ExecuteReader();
-        //    if (reader6.HasRows)
-        //    {
-        //        ListItem item1 = new ListItem();
-        //        item1.Value = "เลือกโปรเจค";
-        //        DDTName.Items.Add(item1);
-        //        while (reader6.Read())
-        //        {
-        //            ListItem item = new ListItem();
-        //            item.Value = reader6[0].ToString();
-        //            DDTName.Items.Add(item);
-        //        }
-        //    }
-        //    reader6.Close();
-        //    con.Close();
+            SqlCommand cmd6 = new SqlCommand("select p.PThaiName " +
+            " from Project p join Request re on p.IDProject = re.IDProject join SProject  sp on sp.IDProject = p.IDProject  " +
+                " where sp.SID ='" + Name + "' and re.NOForm = '1'", con);
+            SqlDataReader reader6 = cmd6.ExecuteReader();
+            if (reader6.HasRows)
+            {
+                ListItem item1 = new ListItem();
+                item1.Value = "เลือกโปรเจค";
+                DDTName.Items.Add(item1);
+                while (reader6.Read())
+                {
+                    ListItem item = new ListItem();
+                    item.Value = reader6[0].ToString();
+                    DDTName.Items.Add(item);
+                }
+            }
+            reader6.Close();
+            con.Close();
         }
 
         protected void CheckEdit()
@@ -586,7 +586,7 @@ namespace Web_Senior_Project.Page
                             InsertRequest();
                             InsertSign();
                             MessageBox.Show("แก้ไข แบบเสนอหัวข้อโครงงานแล้ว", "finish", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Response.Redirect("Sform.aspx");
+                            Response.Redirect("Home-SD.aspx");
                         }
                         else
                         {
@@ -606,7 +606,7 @@ namespace Web_Senior_Project.Page
             }
             else
             {
-                Response.Redirect("SHistory.aspx");
+                Response.Redirect("Home-SD.aspx");
             }
 
 
@@ -614,47 +614,46 @@ namespace Web_Senior_Project.Page
 
         protected void cancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Sform.aspx");
+            Response.Redirect("Home-SD.aspx");
         }
 
         protected void DDTName_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (DDTName.Text != "เลือกโปรเจค")
-            //{
-            //    string idprojj = "";
-            //    string constr = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-            //    SqlConnection con = new SqlConnection(constr);
-            //    con.Open();
+            if (DDTName.Text != "เลือกโปรเจค")
+            {
+                string idprojj = "";
+                string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
+                SqlConnection con = new SqlConnection(constr);
+                con.Open();
 
-            //    SqlCommand cmd6 = new SqlCommand("select p.IDProject from Project p where p.PThaiName = LTRIM('" + DDTName.Text + "')", con);
-            //    SqlDataReader reader6 = cmd6.ExecuteReader();
-            //    if (reader6.HasRows)
-            //    {
-            //        while (reader6.Read())
-            //        {
-            //            idprojj = reader6[0].ToString();
-            //        }
-            //    }
-            //    reader6.Close();
-            //    con.Close();
-            //    DD1.Text = "None";
-            //    DD2.Text = "None";
-            //    DD3.Text = "None";
+                SqlCommand cmd6 = new SqlCommand("select p.IDProject from Project p where p.PThaiName = LTRIM('" + DDTName.Text + "')", con);
+                SqlDataReader reader6 = cmd6.ExecuteReader();
+                if (reader6.HasRows)
+                {
+                    while (reader6.Read())
+                    {
+                        idprojj = reader6[0].ToString();
+                    }
+                }
+                reader6.Close();
+                con.Close();
+                DD1.Text = "None";
+                DD2.Text = "None";
+                DD3.Text = "None";
 
-            //    ShowEdit2(idprojj);
-            //}
+                ShowEdit2(idprojj);
+            }
         }
 
         protected void ShowEdit2(string idp)
         {
-            string constr = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+            string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
             con.Open();
 
 
             //show all sid 
-            SqlCommand cmd2 = new SqlCommand("select distinct v.SID  from view_cpe01 v  " +
-            " where v.IDProject = '" + idp + "'", con);
+            SqlCommand cmd2 = new SqlCommand("select  distinct  sp.SID  from SProject sp  where sp.IDProject ='" + idp + "'", con);
             SqlDataReader reader2 = cmd2.ExecuteReader();
             if (reader2.HasRows)
             {
@@ -673,9 +672,7 @@ namespace Web_Senior_Project.Page
             }
             reader2.Close();
 
-            SqlCommand cmd3 = new SqlCommand("select te.TFirstName ,te.TLastName  " +
-          " from TProject tp join TRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Teacher te on te.TID = tr.TID " +
-          " where tp.IDProject ='" + idp + "' and tr.RID ='1'", con);
+            SqlCommand cmd3 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject ='" + idp + "' and tr.RID ='1'", con);
             SqlDataReader reader3 = cmd3.ExecuteReader();
             if (reader3.Read())
             {
@@ -699,12 +696,10 @@ namespace Web_Senior_Project.Page
             con.Close();
 
 
-            string constr1 = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
+            string constr1 = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             SqlConnection con1 = new SqlConnection(constr1);
             con1.Open();
-            SqlCommand cmd4 = new SqlCommand("select te.TFirstName ,te.TLastName  " +
-            " from TProject tp join TRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Teacher te on te.TID = tr.TID " +
-            " where tp.IDProject ='" + idp + "' and tr.RID ='2'", con1);
+            SqlCommand cmd4 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject ='" + idp + "' and tr.RID ='2'", con1);
             SqlDataReader reader4 = cmd4.ExecuteReader();
             if (reader4.HasRows)
             {
@@ -716,9 +711,7 @@ namespace Web_Senior_Project.Page
             reader4.Close();
 
 
-            SqlCommand cmd5 = new SqlCommand("select te.TFirstName ,te.TLastName  " +
-            " from TProject tp join TRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Teacher te on te.TID = tr.TID " +
-            " where tp.IDProject ='" + idp + "' and tr.RID ='3'", con1);
+            SqlCommand cmd5 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject ='" + idp + "' and tr.RID ='3'", con1);
             SqlDataReader reader5 = cmd5.ExecuteReader();
             if (reader5.HasRows)
             {

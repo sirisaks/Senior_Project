@@ -58,10 +58,10 @@
              <td class="auto-style1"><asp:DropDownList ID="DD3" runat="server" Width="203px" ></asp:DropDownList></td>   
         </tr>
         </table>
-       
-          <asp:Button ID="Sent" runat="server"  class="btn btn-success" style="background-color:#1C9F34" Text="Save" OnClick="Sent_click"/>
-          <asp:Button ID="cancel" runat="server"   class="btn btn-success" style="background-color:#1C9F34" Text="Cancel" OnClick="cancel_Click"/>
-
+       <div style="text-align:center">
+          <asp:Button ID="Sent" runat="server"  class="btn btn-success" style="background-color:#AD1808; border-color:#AD1808 !important ;" Text="Save" OnClick="Sent_click"/>
+          <asp:Button ID="cancel" runat="server"   class="btn btn-success" style="background-color:#AD1808; border-color:#AD1808 !important ;" Text="Cancel" OnClick="cancel_Click"/>
+           </div>
         </div>
         </div>
     </form>

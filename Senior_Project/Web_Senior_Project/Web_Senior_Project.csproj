@@ -164,14 +164,25 @@
     <Content Include="js\wysiwyg\jquery.hotkeys.js" />
     <Content Include="Page\About.aspx" />
     <Content Include="Page\About_Index.aspx" />
+    <Content Include="Page\About_Pr.aspx" />
     <Content Include="Page\About_st.aspx" />
+    <Content Include="Page\pr_cpe1.aspx" />
     <Content Include="Page\cpe1_St.aspx" />
+    <Content Include="Page\cpe2_St.aspx" />
+    <Content Include="Page\cpe3_St.aspx" />
+    <Content Include="Page\cpe4_St.aspx" />
+    <Content Include="Page\cpe5_St.aspx" />
+    <Content Include="Page\cpe6_St.aspx" />
+    <Content Include="Page\cpe7_st.aspx" />
     <Content Include="Page\history_st.aspx" />
     <Content Include="Page\Home-SD.aspx" />
-    <Content Include="Page\Home-TC.aspx" />
     <Content Include="Page\Index%28old%29.aspx" />
     <Content Include="Page\Index.aspx" />
+    <Content Include="Page\Home-TC.aspx" />
+    <Content Include="Page\profile_pr.aspx" />
+    <Content Include="Page\profile_St.aspx" />
     <Content Include="Page\Project_Index.aspx" />
+    <Content Include="Page\Request_Pr.aspx" />
     <Content Include="Page\schedule.aspx" />
     <Content Include="Page\web_guide.aspx" />
     <Content Include="pic\champ.jpg" />
@@ -201,6 +212,13 @@
     <Compile Include="Page\About_Index.aspx.designer.cs">
       <DependentUpon>About_Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\About_Pr.aspx.cs">
+      <DependentUpon>About_Pr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\About_Pr.aspx.designer.cs">
+      <DependentUpon>About_Pr.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\About_st.aspx.cs">
       <DependentUpon>About_st.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -208,12 +226,61 @@
     <Compile Include="Page\About_st.aspx.designer.cs">
       <DependentUpon>About_st.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Page\pr_cpe1.aspx.cs">
+      <DependentUpon>pr_cpe1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\pr_cpe1.aspx.designer.cs">
+      <DependentUpon>pr_cpe1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\cpe1_St.aspx.cs">
       <DependentUpon>cpe1_St.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page\cpe1_St.aspx.designer.cs">
       <DependentUpon>cpe1_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe2_St.aspx.cs">
+      <DependentUpon>cpe2_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe2_St.aspx.designer.cs">
+      <DependentUpon>cpe2_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe3_St.aspx.cs">
+      <DependentUpon>cpe3_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe3_St.aspx.designer.cs">
+      <DependentUpon>cpe3_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe4_St.aspx.cs">
+      <DependentUpon>cpe4_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe4_St.aspx.designer.cs">
+      <DependentUpon>cpe4_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe5_St.aspx.cs">
+      <DependentUpon>cpe5_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe5_St.aspx.designer.cs">
+      <DependentUpon>cpe5_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe6_St.aspx.cs">
+      <DependentUpon>cpe6_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe6_St.aspx.designer.cs">
+      <DependentUpon>cpe6_St.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\cpe7_st.aspx.cs">
+      <DependentUpon>cpe7_st.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\cpe7_st.aspx.designer.cs">
+      <DependentUpon>cpe7_st.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\history_st.aspx.cs">
       <DependentUpon>history_st.aspx</DependentUpon>
@@ -229,13 +296,6 @@
     <Compile Include="Page\Home-SD.aspx.designer.cs">
       <DependentUpon>Home-SD.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Page\Home-TC.aspx.cs">
-      <DependentUpon>Home-TC.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Page\Home-TC.aspx.designer.cs">
-      <DependentUpon>Home-TC.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Page\Index%28old%29.aspx.cs">
       <DependentUpon>Index%28old%29.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -250,12 +310,47 @@
     <Compile Include="Page\index.Master.designer.cs">
       <DependentUpon>index.Master</DependentUpon>
     </Compile>
+    <Compile Include="Page\Home-TC.aspx.cs">
+      <DependentUpon>Home-TC.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Home-TC.aspx.designer.cs">
+      <DependentUpon>Home-TC.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Processors.Master.cs">
+      <DependentUpon>Processors.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Processors.Master.designer.cs">
+      <DependentUpon>Processors.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Page\profile_pr.aspx.cs">
+      <DependentUpon>profile_pr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\profile_pr.aspx.designer.cs">
+      <DependentUpon>profile_pr.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\profile_St.aspx.cs">
+      <DependentUpon>profile_St.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\profile_St.aspx.designer.cs">
+      <DependentUpon>profile_St.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Page\Project_Index.aspx.cs">
       <DependentUpon>Project_Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Page\Project_Index.aspx.designer.cs">
       <DependentUpon>Project_Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Request_Pr.aspx.cs">
+      <DependentUpon>Request_Pr.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Request_Pr.aspx.designer.cs">
+      <DependentUpon>Request_Pr.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\schedule.aspx.cs">
       <DependentUpon>schedule.aspx</DependentUpon>
@@ -313,6 +408,7 @@
     <Content Include="js\datatables\growthrate.csv" />
     <Content Include="js\slider\slider.less" />
     <Content Include="Page\index.Master" />
+    <Content Include="Page\Processors.Master" />
     <None Include="Properties\PublishProfiles\Wed_Senior_Project.pubxml" />
     <Content Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -11,7 +11,7 @@ namespace Web_Senior_Project.Page
 {
 
 
-    public partial class index_Pr
+    public partial class profile_pr
     {
     }
 }

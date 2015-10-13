@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Web_Senior_Project.Page
 {
-    public partial class index_Pr : System.Web.UI.Page
+    public partial class About_Pr : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
