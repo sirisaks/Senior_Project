@@ -13,6 +13,12 @@ html {
 body {
   margin: 0;
 }
+ .fail {
+   background-color:#fa0909  !important;
+    color:#fa0909  !important;
+         }
+
+
 article,
 aside,
 details,

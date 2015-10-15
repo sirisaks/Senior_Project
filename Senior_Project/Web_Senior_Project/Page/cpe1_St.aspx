@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Page/Student.Master" AutoEventWireup="true" CodeBehind="cpe1_St.aspx.cs" Inherits="Web_Senior_Project.Page.cpe1_St" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
         <style type="text/css">
         .auto-style1 {
             width: 247px;
@@ -18,11 +20,9 @@
     <h3 style="text-align:center;">แบบเสนอหัวข้อโครงงานวิศวกรรมคอมพิวเตอร์(CPE01)</h3>
     <div>
       <h5>  ชื่อโครงงาน&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-          <asp:DropDownList ID="DDTName" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DDTName_SelectedIndexChanged">
-          </asp:DropDownList>
         </h5>
   
-            ภาษาไทย&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <asp:TextBox ID="TName" runat="server" Width="422px"></asp:TextBox>
+            ภาษาไทย&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <asp:TextBox ID="TName" runat="server" Width="422px" ></asp:TextBox>
         <br />
         <br/>
             ภาษาอังกฤษ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <asp:TextBox ID="EName" runat="server" Width="422px"></asp:TextBox>
@@ -35,10 +35,11 @@
             <td class="auto-style3">รหัสนิสิต 2</td>
             <td class="auto-style11">รหัสนิสิต 3</td>      
         </tr>
+
         <tr>
-            <td class="auto-style2"><asp:TextBox ID="SID1" runat="server" Width="245px" ReadOnly="True" AutoPostBack="True"></asp:TextBox></td> 
-            <td class="auto-style3"><asp:TextBox ID="SID2" runat="server" Width="255px" AutoPostBack="True"></asp:TextBox></td>
-            <td class="auto-style11"><asp:TextBox ID="SID3" runat="server" Width="238px" AutoPostBack="True"></asp:TextBox></td>
+            <td class="auto-style2"><asp:TextBox ID="SID1" runat="server" Width="245px" ReadOnly="True" ></asp:TextBox></td> 
+            <td class="auto-style3"><asp:TextBox ID="SID2" runat="server" Width="255px" ></asp:TextBox></td>
+            <td class="auto-style11"><asp:TextBox ID="SID3" runat="server" Width="238px" ></asp:TextBox></td>
         </tr>
 
         </table>
@@ -53,9 +54,12 @@
             <td>เสนอรายชื่อกรรมการ 1 ท่าน</td>
         </tr>
         <tr>
-              <td class="auto-style1"><asp:DropDownList ID="DD1" runat="server" Width="203px" ></asp:DropDownList></td>
-             <td class="auto-style1"><asp:DropDownList ID="DD2" runat="server" Width="203px" ></asp:DropDownList></td>
-             <td class="auto-style1"><asp:DropDownList ID="DD3" runat="server" Width="203px" ></asp:DropDownList></td>   
+              <td class="auto-style1"><asp:DropDownList ID="DD1" runat="server" Width="203px" AutoPostBack="True"></asp:DropDownList>
+                  <asp:Label ID="sdd1" runat="server" Text="Label"></asp:Label></td>
+             <td class="auto-style1"><asp:DropDownList ID="DD2" runat="server" Width="203px" ></asp:DropDownList>
+                 <asp:Label ID="sdd2" runat="server" Text="Label"></asp:Label></td>
+             <td class="auto-style1"><asp:DropDownList ID="DD3" runat="server" Width="203px" ></asp:DropDownList>
+                 <asp:Label ID="sdd3" runat="server" Text="Label"></asp:Label></td>   
         </tr>
         </table>
        <div style="text-align:center">
@@ -64,6 +68,13 @@
            </div>
         </div>
         </div>
+
+<%--        <script>
+            $(document).ready(function () {
+
+                alert('test');
+            });
+        </script>--%>
     </form>
 </asp:Content>
 

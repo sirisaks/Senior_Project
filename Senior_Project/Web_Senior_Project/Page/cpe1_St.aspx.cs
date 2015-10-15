@@ -13,14 +13,18 @@ namespace Web_Senior_Project.Page
     public partial class cpe1_St : System.Web.UI.Page
     {
         String Name;
-        String role;
+        String role = "no";
         String ponts;
         int Prpass = 0;
         protected void Page_Load(object sender, EventArgs e)
         {
             Name = Session["userName"].ToString();
+
+           
             role = Session["role"].ToString();
-            DDTName.Visible = false;
+        //    role = Request.QueryString["hh"];
+
+         //   TName.Text = role;
             CheckEdit();
               if (!IsPostBack)
               {
@@ -63,71 +67,49 @@ namespace Web_Senior_Project.Page
 
         }
 
-        protected void ShowEdit()
-        {
-
-            string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
-            SqlConnection con = new SqlConnection(constr);
-            con.Open();
-
-            SqlCommand cmd6 = new SqlCommand("select p.PThaiName " +
-            " from Project p join Request re on p.IDProject = re.IDProject join SProject  sp on sp.IDProject = p.IDProject  " +
-                " where sp.SID ='" + Name + "' and re.NOForm = '1'", con);
-            SqlDataReader reader6 = cmd6.ExecuteReader();
-            if (reader6.HasRows)
-            {
-                ListItem item1 = new ListItem();
-                item1.Value = "เลือกโปรเจค";
-                DDTName.Items.Add(item1);
-                while (reader6.Read())
-                {
-                    ListItem item = new ListItem();
-                    item.Value = reader6[0].ToString();
-                    DDTName.Items.Add(item);
-                }
-            }
-            reader6.Close();
-            con.Close();
-        }
 
         protected void CheckEdit()
         {
 
             if (role == "show")
             {
-                string idre = Session["IDRE"].ToString();
-                DDTName.Visible = false;
-                string nn = "";
+                string idpro = Session["IDpro"].ToString();
 
-                string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
-                SqlConnection con = new SqlConnection(constr);
+                SID1.Enabled = false;
+                SID2.Enabled = false;
+                SID3.Enabled = false;
+                TName.Enabled = false;
+                EName.Enabled = false;
 
-                con.Open();
-                SqlCommand cmd = new SqlCommand(" select pr.IDProject " +
-                " from Request re join Project pr on re.IDProject = pr.IDProject where re.IDRequest ='" + idre + "'", con);
-                SqlDataReader reader1 = cmd.ExecuteReader();
+                   
+                    sdd1.Visible = true;
+                    sdd2.Visible = true;
+                    sdd3.Visible = true;
 
-                if (reader1.Read())
-                {
-                    nn = reader1[0].ToString();
-                }
+                    DD1.Visible = false;
+                    DD2.Visible = false;
+                    DD3.Visible = false;
 
-                reader1.Close();
-                con.Close();
-                DD1.Text = "None";
-                DD2.Text = "None";
-                DD3.Text = "None";
-                DD1.Enabled = false;
-                DD2.Enabled = false;
-                DD3.Enabled = false;
-                ShowDD();
-                ShowEdit2(nn);
-
+                    ShowEdit2(idpro);
                 cancel.Visible = false;
                 Sent.Text = "Back";
             }
             else
             {
+                SID1.Enabled = true;
+                SID2.Enabled = true;
+                SID3.Enabled = true;
+                TName.Enabled = true;
+                EName.Enabled = true;
+
+                sdd1.Visible = false;
+                sdd2.Visible = false;
+                sdd3.Visible = false;
+
+                DD1.Visible = true;
+                DD2.Visible = true;
+                DD3.Visible = true;
+
                 String ch1 = null;
                 string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
                 SqlConnection con = new SqlConnection(constr);
@@ -149,7 +131,6 @@ namespace Web_Senior_Project.Page
                 if (ch1 == "0")
                 {
 
-                    DDTName.Visible = false;
                     ponts = "1";
                     InputName();
                 }
@@ -157,16 +138,12 @@ namespace Web_Senior_Project.Page
                 {
 
                     ponts = "0";
-                    DDTName.Visible = true;
-                    SID1.Enabled = false;
-                    SID2.Enabled = false;
-                    SID3.Enabled = false;
                     Sent.Text = "Edit";
                     cancel.Text = "Back";
-                    if (!IsPostBack)
-                    {
+                    //if (!IsPostBack)
+                    //{
                         ShowEdit();
-                    }
+                    //}
 
                 }
             }
@@ -256,8 +233,9 @@ namespace Web_Senior_Project.Page
                         }
                         else
                         {
-                            MessageBox.Show(id + " มีโครงการแล้ว", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return 1;
+                          //  MessageBox.Show(id + " มีโครงการแล้ว", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                           // return 1;
+                            return 0;
                         }
                     }
                     else
@@ -361,84 +339,208 @@ namespace Web_Senior_Project.Page
 
             if (SsID != "")
             {
+                String nopro = null;
                 string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("insert into SProject(IDProject,SID)  values((select COUNT(*) from Project),'" + SsID + "')", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
+
+                SqlCommand cmd1 = new SqlCommand("select Top 1 pr.IDProject from Project pr  order by pr.IDProject  DESC", con);
+                SqlDataReader reader1 = cmd1.ExecuteReader();
+                if (reader1.Read())
+                {
+                    if (reader1.HasRows)
+                        nopro = reader1[0].ToString();
+                }
+                reader1.Close();
+
+                if (nopro == null) 
+                {
+                    SqlCommand cmd = new SqlCommand("insert into SProject(IDProject,SID)  values( 1 ,'" + SsID + "')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("insert into SProject(IDProject,SID)  values((select Top 1 pr.IDProject from Project pr  order by pr.IDProject  DESC),'" + SsID + "')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
             }
         }
 
         protected void InsertRequest()
         {
+            String nore = null;
             string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
             con.Open();
-            SqlCommand cmd = new SqlCommand(" insert into Request(IDRequest,IDProject,NOForm,RStatus,RequestDate) " +
-    "  values((select count(*) from Request )+1 " +
-    ",(select count(*) from Project),'1','1',( convert (date ,getdate()) ) )", con);
-            cmd.ExecuteNonQuery();
-            con.Close();
+
+            SqlCommand cmd1 = new SqlCommand("select top 1  re.IDRequest  from  Request re order by re.IDRequest desc", con);
+            SqlDataReader reader1 = cmd1.ExecuteReader();
+            if (reader1.Read())
+            {
+                if (reader1.HasRows)
+                    nore = reader1[0].ToString();
+            }
+            reader1.Close();
+
+            if (nore == null) 
+            {
+                SqlCommand cmd = new SqlCommand(" insert into Request(IDRequest,IDProject,NOForm,RStatus,RequestDate) " +
+       "  values( 1 ,(select Top 1 pr.IDProject from Project pr  order by pr.IDProject  DESC),'1','1',( convert (date ,getdate()) ) )", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            else
+            {
+                SqlCommand cmd = new SqlCommand(" insert into Request(IDRequest,IDProject,NOForm,RStatus,RequestDate) " +
+        "  values((select top 1  re.IDRequest  from  Request re order by re.IDRequest desc )+1 " +
+        ",(select Top 1 pr.IDProject from Project pr  order by pr.IDProject  DESC),'1','1',( convert (date ,getdate()) ) )", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
 
         }
 
         protected void InsertSign()
         {
-            String no="";
+            String pid="";
             string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
             con.Open();
-            SqlCommand cmd1 = new SqlCommand("select pp.NO from PRole pr join PProject pp on pr.No = pp.NO where  pr.RID = 1 and pp.IDProject = (select COUNT(*)  from Project)", con);
+            SqlCommand cmd1 = new SqlCommand("select pr.PID from PRole pr join PProject pp on pr.No = pp.NO where  pr.RID = 1 and pp.IDProject = (select COUNT(*)  from Project)", con);
             SqlDataReader reader1 = cmd1.ExecuteReader();
             if (reader1.Read())
             {
                 if(reader1.HasRows)
-                no  = reader1[0].ToString();
+                pid  = reader1[0].ToString();
             }
             reader1.Close();
 
-            SqlCommand cmd = new SqlCommand("insert into [Sign](IDRequest,NO,SignDate)  " +
-     " values( (select count(*) from Request) ,'"+no+"','')", con);
+            SqlCommand cmd = new SqlCommand("insert into [Sign](IDRequest,PID,SignDate)  " +
+     " values( (select top 1  re.IDRequest  from  Request re order by re.IDRequest desc) ,'" + pid + "','')", con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
         protected void INsertProject()
         {
+            String nopro = null;
                 string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
-                SqlCommand cmd = new SqlCommand(" insert into Project(IDProject,PThaiName,PEngName,Pform) " +
-                "  values((select count(*) from Project)+1,'" + TName.Text + "','" + EName.Text + "','0')", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-       
+
+                SqlCommand cmd1 = new SqlCommand("select Top 1 pr.IDProject from Project pr  order by pr.IDProject  DESC", con);
+                SqlDataReader reader1 = cmd1.ExecuteReader();
+                if (reader1.Read())
+                {
+                    if (reader1.HasRows)
+                        nopro = reader1[0].ToString();
+                }
+                reader1.Close();
+
+                if (nopro == null) 
+                {
+                    SqlCommand cmd = new SqlCommand(" insert into Project(IDProject,PThaiName,PEngName,Pform) " +
+                   "  values(1,'" + TName.Text + "','" + EName.Text + "','0')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand(" insert into Project(IDProject,PThaiName,PEngName,Pform) " +
+                    "  values((select Top 1 pr.IDProject from Project pr  order by pr.IDProject  DESC)+1,'" + TName.Text + "','" + EName.Text + "','0')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
 
         }
 
         protected void deleteProject()
         {
-            //string constr = WebConfigurationManager.ConnectionStrings["Db"].ConnectionString;
-            //SqlConnection con = new SqlConnection(constr);
-            //con.Open();
-            //SqlCommand cmd = new SqlCommand(" delete from Project   where Project.PThaiName = LTRIM('" + TName.Text + "')", con);
-            //cmd.ExecuteNonQuery();
-            //con.Close();
+            String idpro = "";
+            String idre = "";
+            string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
+            SqlConnection con = new SqlConnection(constr);
+            con.Open();
+            SqlCommand cmd1 = new SqlCommand("select  distinct sp.IDProject from SProject sp where sp.SID = LTRIM('"+Name+"') ", con);
+            SqlDataReader reader1 = cmd1.ExecuteReader();
+            if (reader1.Read())
+            {
+                if (reader1.HasRows)
+                    idpro = reader1[0].ToString();
+            }
+            reader1.Close();
+
+            SqlCommand cmd11 = new SqlCommand("select re.IDRequest from Request re  where re.IDProject = LTRIM('"+idpro+"')", con);
+            SqlDataReader reader2 = cmd11.ExecuteReader();
+            if (reader2.Read())
+            {
+                if (reader2.HasRows)
+                    idre = reader2[0].ToString();
+            }
+            reader2.Close();
+
+            SqlCommand cmd05 = new SqlCommand(" delete from  sign  where IDRequest = LTRIM('" + idre + "') ", con);
+            cmd05.ExecuteNonQuery();
+
+            SqlCommand cmd03 = new SqlCommand(" delete from  Request  where IDProject = LTRIM('" + idpro + "') ", con);
+            cmd03.ExecuteNonQuery();
+
+            //SqlCommand cmd04 = new SqlCommand(" delete from  PRole  where IDProject = LTRIM('" + idpro + "') ", con);
+            //cmd04.ExecuteNonQuery();
+
+            SqlCommand cmd02 = new SqlCommand(" delete from  PProject  where IDProject = LTRIM('" + idpro + "') ", con);
+            cmd02.ExecuteNonQuery();
+
+            SqlCommand cmd = new SqlCommand(" delete from  SProject  where IDProject = LTRIM('"+idpro+"') ", con);
+            cmd.ExecuteNonQuery();
+
+            SqlCommand cmd01 = new SqlCommand(" delete from  Project  where IDProject = LTRIM('" + idpro + "') ", con);
+            cmd01.ExecuteNonQuery();
+
+       
+
+       
+
+            
+            con.Close();
+
+
         }
 
         protected void InsertTRole(string Name, int role)
         {
+            string noro = null;
             if (Name != "None")
             {
                 string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
                 SqlConnection con = new SqlConnection(constr);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("insert into PRole(No,PID,RID) values ((select COUNT(*) from PRole)+1,(select t.PID from Professors t  where t.PFirstName = RTRIM('" + Name + "')),'" + role + "')", con);
-                cmd.ExecuteNonQuery();
-                con.Close();
 
-                INsertTProject();
+                SqlCommand cmd1 = new SqlCommand("select top 1 pr.No   from PRole pr  order by pr.No desc", con);
+                SqlDataReader reader1 = cmd1.ExecuteReader();
+                if (reader1.Read())
+                {
+                    if (reader1.HasRows)
+                        noro = reader1[0].ToString();
+                }
+                reader1.Close();
+
+                if (noro == null) 
+                {
+                    SqlCommand cmd = new SqlCommand("insert into PRole(No,PID,RID) values ( 1,(select t.PID from Professors t  where t.PFirstName = RTRIM('" + Name + "')),'" + role + "')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("insert into PRole(No,PID,RID) values ((select top 1 pr.No   from PRole pr  order by pr.No desc)+1,(select t.PID from Professors t  where t.PFirstName = RTRIM('" + Name + "')),'" + role + "')", con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                    INsertTProject();
+                
             }
         }
 
@@ -580,6 +682,11 @@ namespace Web_Senior_Project.Page
                     {
                         if (DD3.Text != "None")
                         {
+                             if (CheckStudent(SID1.Text) != 1 && CheckStudent(SID2.Text) != 1 && CheckStudent(SID3.Text) != 1)
+                                {
+                                    if (CheckedSameIDStudent() == 0 )
+                                    {
+                            deleteProject();
                             INsertProject();
                             insertStudent();
                             insertTeacher();
@@ -587,6 +694,12 @@ namespace Web_Senior_Project.Page
                             InsertSign();
                             MessageBox.Show("แก้ไข แบบเสนอหัวข้อโครงงานแล้ว", "finish", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Response.Redirect("Home-SD.aspx");
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("คุณใส่รหัสนิสิตซ้ำกัน", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                }
                         }
                         else
                         {
@@ -617,108 +730,124 @@ namespace Web_Senior_Project.Page
             Response.Redirect("Home-SD.aspx");
         }
 
-        protected void DDTName_SelectedIndexChanged(object sender, EventArgs e)
+      
+        protected void ShowEdit()
         {
-            if (DDTName.Text != "เลือกโปรเจค")
-            {
-                string idprojj = "";
-                string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
-                SqlConnection con = new SqlConnection(constr);
-                con.Open();
-
-                SqlCommand cmd6 = new SqlCommand("select p.IDProject from Project p where p.PThaiName = LTRIM('" + DDTName.Text + "')", con);
-                SqlDataReader reader6 = cmd6.ExecuteReader();
-                if (reader6.HasRows)
-                {
-                    while (reader6.Read())
-                    {
-                        idprojj = reader6[0].ToString();
-                    }
-                }
-                reader6.Close();
-                con.Close();
-                DD1.Text = "None";
-                DD2.Text = "None";
-                DD3.Text = "None";
-
-                ShowEdit2(idprojj);
-            }
-        }
-
-        protected void ShowEdit2(string idp)
-        {
+            string idprojj = "";
             string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             SqlConnection con = new SqlConnection(constr);
             con.Open();
 
-
-            //show all sid 
-            SqlCommand cmd2 = new SqlCommand("select  distinct  sp.SID  from SProject sp  where sp.IDProject ='" + idp + "'", con);
-            SqlDataReader reader2 = cmd2.ExecuteReader();
-            if (reader2.HasRows)
+            SqlCommand cmd6 = new SqlCommand("select sp.IDProject from SProject  sp   where sp.SID = '" + Name + "'", con);
+            SqlDataReader reader6 = cmd6.ExecuteReader();
+            if (reader6.HasRows)
             {
-                int count = 0;
-                String[] sids = { "", "", "" };
-                while (reader2.Read())
+                while (reader6.Read())
                 {
-                    sids[count] = reader2[0].ToString();
-                    count++;
-                }
-
-                SID1.Text = sids[0].ToString();
-                SID2.Text = sids[1].ToString();
-                SID3.Text = sids[2].ToString();
-
-            }
-            reader2.Close();
-
-            SqlCommand cmd3 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject ='" + idp + "' and tr.RID ='1'", con);
-            SqlDataReader reader3 = cmd3.ExecuteReader();
-            if (reader3.Read())
-            {
-                DD1.Text = reader3[0].ToString() + " " + reader3[1].ToString();
-
-            }
-            reader3.Close();
-
-
-            SqlCommand cmd1 = new SqlCommand(" select  p.PEngName,p.PThaiName  from Project p  where p.IDProject = LTRIM('" + idp + "')", con);
-            SqlDataReader reader1 = cmd1.ExecuteReader();
-            if (reader1.HasRows)
-            {
-                while (reader1.Read())
-                {
-                    EName.Text = reader1[0].ToString();
-                    TName.Text = reader1[1].ToString();
+                    idprojj = reader6[0].ToString();
                 }
             }
-            reader1.Close();
+            reader6.Close();
             con.Close();
 
+            ShowEdit2(idprojj);
+
+        }
+
+
+        protected void ShowEdit2(string idp)
+        {
+
+
+            if (!IsPostBack)
+            {
+                string constr = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
+                SqlConnection con = new SqlConnection(constr);
+                con.Open();
+
+
+                //show all sid 
+                SqlCommand cmd2 = new SqlCommand("select  distinct  sp.SID  from SProject sp  where sp.IDProject ='" + idp + "'", con);
+                SqlDataReader reader2 = cmd2.ExecuteReader();
+                if (reader2.HasRows)
+                {
+                    int count = 0;
+                    String[] sids = { "", "", "" };
+                    while (reader2.Read())
+                    {
+                        sids[count] = reader2[0].ToString();
+                        count++;
+                    }
+
+                    SID1.Text = sids[0].ToString();
+                    SID2.Text = sids[1].ToString();
+                    SID3.Text = sids[2].ToString();
+
+                }
+                reader2.Close();
+
+
+                SqlCommand cmd1 = new SqlCommand(" select  p.PEngName,p.PThaiName  from Project p  where p.IDProject = LTRIM('" + idp + "')", con);
+                SqlDataReader reader1 = cmd1.ExecuteReader();
+                if (reader1.HasRows)
+                {
+                    while (reader1.Read())
+                    {
+                        EName.Text = reader1[0].ToString();
+                        TName.Text = reader1[1].ToString();
+                    }
+                }
+
+                reader1.Close();
+                con.Close();
+            }
 
             string constr1 = WebConfigurationManager.ConnectionStrings["Dbconnection"].ConnectionString;
             SqlConnection con1 = new SqlConnection(constr1);
             con1.Open();
-            SqlCommand cmd4 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject ='" + idp + "' and tr.RID ='2'", con1);
+            SqlCommand cmd4 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject =LTRIM('" + idp + "') and tr.RID ='2'", con1);
             SqlDataReader reader4 = cmd4.ExecuteReader();
             if (reader4.HasRows)
             {
                 while (reader4.Read())
                 {
+                    sdd2.Text = reader4[0].ToString() + " " + reader4[1].ToString();
                     DD2.Text = reader4[0].ToString() + " " + reader4[1].ToString();
                 }
+            }
+            else
+            {
+                sdd2.Text = "-";
             }
             reader4.Close();
 
 
-            SqlCommand cmd5 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject ='" + idp + "' and tr.RID ='3'", con1);
+            SqlCommand cmd3 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject =LTRIM('" + idp + "') and tr.RID ='1'", con1);
+            SqlDataReader reader3 = cmd3.ExecuteReader();
+            if (reader3.Read())
+            {
+                sdd1.Text = reader3[0].ToString() + " " + reader3[1].ToString();
+                DD1.Text = reader3[0].ToString() + " " + reader3[1].ToString();
+            }
+            else
+            {
+                sdd1.Text = "-";
+            }
+            reader3.Close();
+
+            SqlCommand cmd5 = new SqlCommand("select te.PFirstName ,te.PLastName   from PProject tp join PRole tr on tp.NO = tr.No  join Role ro on tr.RID = ro.RID join Professors te on te.PID = tr.PID  where tp.IDProject =LTRIM('" + idp + "') and tr.RID ='3'", con1);
             SqlDataReader reader5 = cmd5.ExecuteReader();
             if (reader5.HasRows)
             {
                 while (reader5.Read())
                 {
+                    sdd3.Text = reader5[0].ToString() + " " + reader5[1].ToString();
                     DD3.Text = reader5[0].ToString() + " " + reader5[1].ToString();
                 }
+            }
+            else
+            {
+                sdd3.Text = "-";
             }
             reader5.Close();
             con1.Close();

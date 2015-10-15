@@ -46,6 +46,10 @@ namespace Web_Senior_Project.Page
             con.Close();
             if (role.Equals("Null"))
             {
+
+                string yourHTMLstring1 = " <script type='text/javascript' > alert('Test call stript');</script> ";
+
+                btnSubmit.Controls.Add(new LiteralControl(yourHTMLstring1));
                 MessageBox.Show("Invalid Login",
                                    "Important Note",
                    MessageBoxButtons.OK,
@@ -68,5 +72,6 @@ namespace Web_Senior_Project.Page
 
             }
         }
-    }
+  
+    } // end class
 }

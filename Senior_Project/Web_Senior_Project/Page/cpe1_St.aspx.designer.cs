@@ -13,15 +13,6 @@ namespace Web_Senior_Project.Page {
     public partial class cpe1_St {
         
         /// <summary>
-        /// DDTName control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDTName;
-        
-        /// <summary>
         /// TName control.
         /// </summary>
         /// <remarks>
@@ -76,6 +67,15 @@ namespace Web_Senior_Project.Page {
         protected global::System.Web.UI.WebControls.DropDownList DD1;
         
         /// <summary>
+        /// sdd1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sdd1;
+        
+        /// <summary>
         /// DD2 control.
         /// </summary>
         /// <remarks>
@@ -85,6 +85,15 @@ namespace Web_Senior_Project.Page {
         protected global::System.Web.UI.WebControls.DropDownList DD2;
         
         /// <summary>
+        /// sdd2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sdd2;
+        
+        /// <summary>
         /// DD3 control.
         /// </summary>
         /// <remarks>
@@ -92,6 +101,15 @@ namespace Web_Senior_Project.Page {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DD3;
+        
+        /// <summary>
+        /// sdd3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sdd3;
         
         /// <summary>
         /// Sent control.

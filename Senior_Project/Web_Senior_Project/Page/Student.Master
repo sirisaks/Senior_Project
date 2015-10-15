@@ -1,6 +1,9 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Student.master.cs" Inherits="Web_Senior_Project.Page.Student" %>
 
+<%--<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>--%>
+
 <!DOCTYPE html>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" class="app">
 <head runat="server">
@@ -16,6 +19,7 @@
   <link rel="stylesheet" href="../css/icon.css" type="text/css" />
   <link rel="stylesheet" href="../css/font.css" type="text/css" />
   <link rel="stylesheet" href="../css/app.css" type="text/css" />  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
 </head>
 <body class="" >
@@ -31,38 +35,27 @@
           <span class="hidden-nav-xs">Senior Project</span>
         </a>
       </div>
+
       <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user user">
         <li class="hidden-xs">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <i class="i i-chat3"></i>
-            <span class="badge badge-sm up bg-danger count">2</span>
+            <span class="badge badge-sm bg-danger "> <asp:Label ID="countNoti" runat="server" Text="Label"></asp:Label></span>
           </a>
           <section class="dropdown-menu aside-xl animated flipInY">
             <section class="panel bg-white">
               <div class="panel-heading b-light bg-light">
-                <strong>You have <span class="count">2</span> notifications</strong>
+                <strong>You have <span class="count">
+                    <asp:Label ID="countNoti1" runat="server" Text="Label"></asp:Label></span> notifications</strong>
               </div>
-              <div class="list-group list-group-alt">
-                <a href="#" class="media list-group-item">
-               <%--   <span class="pull-left thumb-sm">
-                    <img src="images/a0.png" alt="..." class="img-circle">
-                  </span>--%>
-                  <span class="media-body block m-b-none">
-                    Use awesome animate.css
-                    <small class="text-muted">10 minutes ago</small>
-                  </span>
-                </a>
-                <a href="#" class="media list-group-item">
-                  <span class="media-body block m-b-none">
-                    1.0 initial released
-                    <small class="text-muted">1 hour ago</small>
-                  </span>
-                </a>
+                
+              <div id="NotiDetial" class="list-group list-group-alt" runat="server">
               </div>
-              <div class="panel-footer text-sm">
+
+           <%--   <div class="panel-footer text-sm">
                 <a href="#" class="pull-right"><i class="fa fa-cog"></i></a>
                 <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
-              </div>
+              </div>--%>
             </section>
           </section>
         </li>
@@ -113,54 +106,53 @@
                         <span class="font-bold">CPE Form</span>
                       </a>
                        
-                      <ul class="nav dk">
-                        <%--   <form runat="server">--%>
+                      <ul class="nav " style= " background-color:#783131; list-style-type: circle;">
                         <li >
-                              <a href="cpe1_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                             <%--  <a id="cpe1" href="#" class="auto">  --%>  
+                             <a id="cpe1" href="cpe1_St.aspx?role=123" class="auto">                                                      
+                            <i id="icon_cpe1"   class="fa fa-times " style="color:#ff0000;"  runat="server"></i>
 
-                            <span>CPE01</span>
+                            <span>CPE01</span>         
                           </a>
-                           <%--  <asp:Button ID="cpe01" runat="server" Text="CPE01" OnClick="cpe01_Click" />--%>
                         </li>
                          <li >
                           <a href="cpe2_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                            <i id="icon_cpe2" class="fa fa-times " style="color:#ff0000;"  runat="server"></i>
 
                             <span>CPE02</span>
                           </a>
                         </li>
                          <li >
                           <a href="cpe3_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                            <i id="icon_cpe3" class="fa fa-times " style="color:#ff0000;"  runat="server"></i>
 
                             <span>CPE03</span>
                           </a>
                         </li>
                             <li >
                           <a href="cpe4_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                            <i id="icon_cpe4" class="fa fa-times " style="color:#ff0000;"  runat="server"></i>
 
                             <span>CPE04</span>
                           </a>
                         </li>
                             <li >
                           <a href="cpe5_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                           <i id="icon_cpe5" class="fa fa-times " style="color:#ff0000;"  runat="server"></i>
 
                             <span>CPE05</span>
                           </a>
                         </li>
                             <li >
                           <a href="cpe6_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                           <i id="icon_cpe6" class="fa fa-times " style="color:#ff0000;"  runat="server"></i>
 
                             <span>CPE06</span>
                           </a>
                         </li>
                             <li >
                           <a href="cpe7_St.aspx" class="auto">                                                        
-                            <i class="i i-dot"></i>
+                            <i id="icon_cpe7" class="fa fa-times " style="color:#ff0000;"   runat="server"></i>
 
                             <span>CPE07</span>
                           </a>
@@ -169,6 +161,14 @@
                       </ul>
                            
                        
+                    </li>
+
+                       <li >
+                      <a href="history_st.aspx" class="auto">
+                        <i class="i i-statistics icon">
+                        </i>
+                        <span class="font-bold">History</span>
+                      </a>
                     </li>
 
                        <li >
@@ -230,7 +230,8 @@
   <script src="../js/slimscroll/jquery.slimscroll.min.js"></script>
   
   <script src="../js/app.plugin.js"></script>
-     
+ <script src="../js/jquery-1.11.3.js"></script>
+
 </body>
 </html>
 

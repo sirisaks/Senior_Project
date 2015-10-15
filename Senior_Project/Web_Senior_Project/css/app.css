@@ -3579,4 +3579,5 @@ fieldset[disabled] .i-checks input + i:before {
   .wrapper-lg {
     padding: 15px;
   }
+
 }
